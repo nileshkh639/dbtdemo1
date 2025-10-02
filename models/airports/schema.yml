@@ -1,0 +1,19 @@
+version: 2
+
+sources:
+  - name: bigquery_source
+    schema: nileshdbt639.staging
+
+    tables:
+        - name: nileshdbt639.staging.airports
+
+models:
+    - name: airport_dbt
+      description: "A starter dbt model"
+      columns:
+          - name: object_id
+            description: "The primary key for this table"
+            tests:
+                - unique
+                - not_null
+
