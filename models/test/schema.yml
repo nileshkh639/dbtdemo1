@@ -1,0 +1,20 @@
+
+version: 2
+
+sources:
+  - name: bigquery_source
+    schema: nileshdbt639.staging
+
+    tables:
+        - name: nileshdbt639.staging.products
+
+models:
+    - name: product_dbt
+      description: "A starter dbt model"
+      columns:
+          - name: product_id
+            description: "The primary key for this table"
+            tests:
+                - unique
+                - not_null
+
